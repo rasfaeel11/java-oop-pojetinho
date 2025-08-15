@@ -11,7 +11,6 @@ public class Main{
         ArrayList<Produto> listaProdutos = new ArrayList<>();
         int opcao;
 
-
         System.out.println("Sistema Cadastro Produtos");
         System.out.println("==========================");
 
@@ -45,17 +44,33 @@ public class Main{
                 case 3:
                     System.out.println("Qual produto voce quer Buscar: ");
                     String busca = input.nextLine();
+                    boolean encontrado = false;
                     for( Produto produto : listaProdutos){
                         if(produto.getNome().equalsIgnoreCase(busca)){
-                            System.out.println("Produto Encontrado");
+                            System.out.println("Produto Encontrado " + produto);
+                            encontrado = true;
                             break;
-                        }else{
-                            System.out.println("Produto nao encontrado");
                         }
+                    }
+                    if (!encontrado){
+                            System.out.println("Produto Nao encontrado.");
                     }
                     break;
                 case 4:
-
+                    System.out.println("Qual produto voce deseja remover? ");
+                    String removerProduto = input.nextLine();
+                    boolean removido = false;
+                    for (Produto produto : listaProdutos){
+                        if(produto.getNome().equalsIgnoreCase(removerProduto)){
+                            listaProdutos.remove(produto);
+                            System.out.println("produto removido");
+                            removido = true;
+                            break;
+                        } 
+                    }
+                    if(!removido){
+                        System.out.println("Produto nao Encontrado");
+                    }
                     break;
             
                 default:

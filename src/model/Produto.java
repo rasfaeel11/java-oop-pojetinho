@@ -12,6 +12,11 @@ public class Produto {
         this.qtdEstoque = qtdEstoque;
     }
 
+        @Override
+        public String toString() {
+            return "Produto: " + nome + " | Preço: R$ " + preco;
+        }
+
     // getters and setters
     public String getNome() {
         return nome;
