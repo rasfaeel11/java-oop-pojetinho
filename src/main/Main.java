@@ -59,17 +59,13 @@ public class Main{
                 case 4:
                     System.out.println("Qual produto voce deseja remover? ");
                     String removerProduto = input.nextLine();
-                    boolean removido = false;
                     for (Produto produto : listaProdutos){
                         if(produto.getNome().equalsIgnoreCase(removerProduto)){
                             listaProdutos.remove(produto);
-                            System.out.println("produto removido");
-                            removido = true;
                             break;
-                        } 
-                    }
-                    if(!removido){
-                        System.out.println("Produto nao Encontrado");
+                        } else{
+                            System.out.println("Produto nao encontrado. Tente novamente atraves do menu.");
+                        }
                     }
                     break;
             
